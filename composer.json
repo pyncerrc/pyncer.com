@@ -1,0 +1,18 @@
+{
+    "require": {
+        "pyncer/app": "^1.0",
+        "pyncer/dotenv": "^1.0.1",
+        "league/commonmark": "^2.3",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pyncer\\Docs\\": "private/code"
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
+    }
+}

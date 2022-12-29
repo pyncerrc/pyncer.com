@@ -1,0 +1,52 @@
+{
+    "syntax.join_title": "{0} - {1}",
+
+    "overview.title": "Aperçu",
+
+    "page.title": "Pyncer",
+    "page.http-status-404.title": "404 Page Non Trouvée",
+
+    "page.access.title": "Accéder",
+    "page.access/basic-authenticator.title": "Authentificateur de Base",
+    "page.access/bearer-authenticator.title": "Authentification du Porteur",
+
+    "page.app.title": "APP",
+    "page.cache.title": "Cache",
+    "page.component.title": "Composant",
+    "page.container.title": "Récipient",
+    "page.core.title": "Coeur",
+    "page.data.title": "Données",
+
+    "page.database.title": "Base de Données",
+    "page.database/alter-table.title": "Modifier le Tableau",
+    "page.database/conditions.title": "Les Conditions",
+    "page.database/create-table.title": "Créer un Tableau",
+    "page.database/delete.title": "Effacer",
+    "page.database/insert.title": "Insérer",
+    "page.database/select.title": "Sélectionner",
+    "page.database/update.title": "Mise à Jour",
+    "page.database/functions.title": "Les Fonctions",
+
+    "page.dotenv.title": "Dotenv",
+    "page.exception.title": "Exception",
+    "page.http.title": "HTTP",
+    "page.i18n.title": "I18N",
+    "page.iterable.title": "Itérable",
+    "page.log.title": "Le Registre",
+    "page.routing.title": "Routage",
+    "page.session.title": "Session",
+    "page.source.title": "Source",
+    "page.unit.title": "Unité",
+    "page.utility.title": "Utilitaire",
+    "page.validation.title": "Validation",
+
+    "notice.i18n": "Les traductions non anglaises ne servent actuellement qu'à démontrer la capacité du cadre et sont susceptibles de contenir de nombreuses erreurs. Désolé pour le dérangement.",
+
+    "breadcrumb.label": "Miette de Pain",
+    "dark.label": "Foncé",
+    "github.label": "Pyncer sur GitHub",
+    "light.label": "Lumière",
+    "language.label": "Langue",
+    "system.label": "Système",
+    "theme.label": "Thème"
+}

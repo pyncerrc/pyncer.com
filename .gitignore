@@ -1,0 +1,9 @@
+.env
+/vendor
+/node_modules
+dev.sh
+composer.dev.json
+composer.dev.lock
+prod.sh
+composer.prod.json
+composer.prod.lock

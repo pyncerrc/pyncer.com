@@ -1,0 +1,51 @@
+{
+    "syntax.join_title": "{0} - {1}",
+
+    "overview.title": "概要",
+
+    "page.title": "Pyncer",
+    "page.http-status-404.title": "404 ページが見つかりませんでした",
+
+    "page.access.title": "アクセス",
+    "page.access/basic-authenticator.title": "基本認証",
+    "page.access/bearer-authenticator.title": "ベアラー認証",
+
+    "page.app.title": "アプリ",
+    "page.component.title": "成分",
+    "page.container.title": "コンテナ",
+    "page.core.title": "コア",
+    "page.data.title": "データ",
+
+    "page.database.title": "データベース",
+    "page.database/alter-table.title": "テーブルの変更",
+    "page.database/conditions.title": "条件",
+    "page.database/create-table.title": "テーブルの作成",
+    "page.database/delete.title": "消去",
+    "page.database/insert.title": "挿入",
+    "page.database/select.title": "選択",
+    "page.database/update.title": "更新",
+    "page.database/functions.title": "機能",
+
+    "page.dotenv.title": "Dotenv",
+    "page.exception.title": "例外",
+    "page.http.title": "HTTP",
+    "page.i18n.title": "I18N",
+    "page.iterable.title": "横断可能",
+    "page.log.title": "記録",
+    "page.routing.title": "ルーティング",
+    "page.session.title": "セッション",
+    "page.source.title": "ソース",
+    "page.unit.title": "ユニット",
+    "page.utility.title": "ユーティリティー",
+    "page.validation.title": "検証",
+
+    "notice.i18n": "現在のところ、英語以外の翻訳はフレームワークの能力を実証するためだけのものであり、多くの間違いが含まれている可能性があります。 ご不便おかけしてすみません。",
+
+    "breadcrumb.label": "ブレッドクラム",
+    "dark.label": "暗い",
+    "github.label": "GitHub の Pyncer",
+    "light.label": "光",
+    "language.label": "言語",
+    "system.label": "システム",
+    "theme.label": "テーマ"
+}

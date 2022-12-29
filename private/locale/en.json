@@ -1,0 +1,89 @@
+{
+    "syntax.join_title": "{0} - {1}",
+
+    "overview.title": "Overview",
+
+    "page.title": "Pyncer",
+    "page.description": "Documentation for the Pyncer PHP framework.",
+
+    "page.http-status-404.title": "404 Page Not Found",
+
+    "page.access.title": "Access",
+    "page.access.description": "Facilitate the authorization and authentication of users to access restricted content.",
+
+    "page.access/basic-authenticator.title": "Basic Authenticator",
+    "page.access/bearer-authenticator.title": "Bearer Authenticaor",
+
+    "page.app.title": "APP",
+    "page.app.description": "Handle a request and outputs a response.",
+
+    "page.component.title": "Component",
+    "page.component.description": "Handle generating the body of an HTPP response.",
+
+    "page.container.title": "Container",
+    "page.container.description": "A basic implementation of the PSR-11 Container Interface.",
+
+    "page.core.title": "Core",
+    "page.core.description": "A set of common standalone functions used by various pyncer packages.",
+
+    "page.data.title": "Data",
+    "page.data.description": "Provides a PHP object representation of your database.",
+
+    "page.database.title": "Database",
+    "page.database.description": "Provides a standard interface for working with databases.",
+
+    "page.database/alter-table.title": "Alter Table",
+    "page.database/conditions.title": "Conditions",
+    "page.database/create-table.title": "Create Table",
+    "page.database/delete.title": "Delete",
+    "page.database/insert.title": "Insert",
+    "page.database/select.title": "Select",
+    "page.database/update.title": "Update",
+    "page.database/functions.title": "Functions",
+
+    "page.dotenv.title": "Dotenv",
+    "page.dotenv.description": "A phpdotenv adaptor interface implementation to read and write .env values to constants.",
+
+    "page.exception.title": "Exception",
+    "page.exception.description": "Common exceptions used by Pyncer that all implement a base Pyncer exception interface.",
+
+    "page.http.title": "HTTP",
+    "page.http.description": "An implementation of PSR-7 HTTP Message Interfaces, PSR-15 HTTP Server Request Handlers, and PSR-17 HTTP Factories.",
+
+    "page.i18n.title": "I18N",
+    "page.i18n.description": "Provide translations for content as well as to format data such as dates and numbers to a locale's specification.",
+
+    "page.iterable.title": "Iterable",
+    "page.iterable.description": "Provides a set of iterable objects such as sets and maps to more easily work with data.",
+
+    "page.log.title": "Log",
+    "page.log.description": "An implementation of the PSR-3 Logger Interface.",
+
+    "page.routing.title": "Routing",
+    "page.routing.description": "Links the current HTTP request to a corresponding HTTP response.",
+
+    "page.session.title": "Session",
+    "page.session.description": "Provides a common interface for dealing with user sessions.",
+
+    "page.source.title": "Source",
+    "page.source.description": "Used for specifying sources of data such as i18n translations or router pages.",
+
+    "page.unit.title": "Unit",
+    "page.unit.description": "Handles the conversion of units such as length, mass, and file size.",
+
+    "page.utility.title": "Utility",
+    "page.utility.description": "A collection of classes and interfaces, commonly used by other packages.",
+
+    "page.validation.title": "Validation",
+    "page.validation.description": "Used for validating untrusted data such as data posted by a user.",
+
+    "notice.i18n": "Non English translations are currently only to demonstrate the ability of the framework and are likely to contain many mistakes. Sorry for the inconvenience.",
+
+    "breadcrumb.label": "Breadcrumb",
+    "dark.label": "Dark",
+    "github.label": "Pyncer on GitHub",
+    "light.label": "Light",
+    "language.label": "Language",
+    "system.label": "System",
+    "theme.label": "Theme"
+}

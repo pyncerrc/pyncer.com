@@ -1,0 +1,51 @@
+{
+    "syntax.join_title": "{0} - {1}",
+
+    "overview.title": "Обзор",
+
+    "page.title": "Pyncer",
+    "page.http-status-404.title": "404 Страница Не Найдена",
+
+    "page.access.title": "Доступ",
+    "page.access/basic-authenticator.title": "Базовая Аутентификация",
+    "page.access/bearer-authenticator.title": "Аутентификация Носителя",
+
+    "page.app.title": "Применение",
+    "page.component.title": "Компонент",
+    "page.container.title": "Контейнер",
+    "page.core.title": "Основной",
+    "page.data.title": "Данные",
+
+    "page.database.title": "База Данных",
+    "page.database/alter-table.title": "Изменить Таблицу",
+    "page.database/conditions.title": "Условия",
+    "page.database/create-table.title": "Создать Таблицу",
+    "page.database/delete.title": "Удалить",
+    "page.database/insert.title": "Вставлять",
+    "page.database/select.title": "Выбирать",
+    "page.database/update.title": "Обновлять",
+    "page.database/functions.title": "Функции",
+
+    "page.dotenv.title": "Dotenv",
+    "page.exception.title": "Исключение",
+    "page.http.title": "HTTP",
+    "page.i18n.title": "I18N",
+    "page.iterable.title": "Повторяемый",
+    "page.log.title": "Журнал",
+    "page.routing.title": "Маршрутизация",
+    "page.session.title": "Сессия",
+    "page.source.title": "Источник",
+    "page.unit.title": "Блок",
+    "page.utility.title": "Утилита",
+    "page.validation.title": "Проверка",
+
+    "notice.i18n": "Неанглийские переводы в настоящее время предназначены только для демонстрации возможностей фреймворка и, вероятно, содержат много ошибок. Простите за неудобства.",
+
+    "breadcrumb.label": "Хлебные Крошки",
+    "dark.label": "ТемнотаDark",
+    "github.label": "Pyncer на GitHub",
+    "light.label": "Свет",
+    "language.label": "Язык",
+    "system.label": "Система",
+    "theme.label": "Тема"
+}

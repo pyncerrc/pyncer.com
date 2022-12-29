@@ -1,0 +1,236 @@
+html {
+    font-size: 150%;
+    height: 100%;
+}
+@media screen(sm) {
+    html {
+        font-size: 200%;
+    }
+}
+body {
+    height: 100%;
+}
+
+#menu_toggle ~ ul {
+    display: none;
+}
+
+#menu_toggle:checked ~ ul {
+    display: flex;
+}
+
+@media screen(lg) {
+    #menu_toggle ~ ul {
+        display: flex;
+    }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hamburger span:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+.hamburger_expanded span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 0.5rem;
+}
+.hamburger_expanded span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger span:nth-child(3) {
+    bottom: 0;
+    left: 0;
+}
+.hamburger_expanded span:nth-child(3) {
+    transform: rotate(-45deg);
+    bottom: 0.5rem;
+}
+.hamburger span {
+    background: #57534E; /* Stone 600 */
+}
+.hamburger:hover span {
+    background: #A8A29E; /* Stone 400 */
+}
+.dark .hamburger span {
+    background: #57534E; /* Stone 600 */
+}
+.dark .hamburger:hover span {
+    background: #A8A29E; /* Stone 400 */
+}
+
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.75rem;
+}
+code.hljs {
+    padding: 0 0.25rem;
+}
+.hljs {
+    color: #504945;
+    background: #e7e5e4;
+}
+.hljs ::selection,
+.hljs::selection {
+    background-color: #d5c4a1;
+    color: #504945;
+}
+.hljs-comment {
+    color: #bdae93;
+}
+.hljs-tag {
+    color: #665c54;
+}
+.hljs-operator,
+.hljs-punctuation,
+.hljs-subst {
+    color: #504945;
+}
+.hljs-operator {
+    opacity: 0.7;
+}
+.hljs-bullet,
+.hljs-deletion,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-template-variable,
+.hljs-variable {
+    color: #9d0006;
+}
+.hljs-attr,
+.hljs-link,
+.hljs-literal,
+.hljs-number,
+.hljs-symbol,
+.hljs-variable.constant_ {
+    color: #af3a03;
+}
+.hljs-class .hljs-title,
+.hljs-title,
+.hljs-title.class_ {
+    color: #b57614;
+}
+.hljs-strong {
+    font-weight: 700;
+    color: #b57614;
+}
+.hljs-addition,
+.hljs-code,
+.hljs-string,
+.hljs-title.class_.inherited__ {
+    color: #79740e;
+}
+.hljs-built_in,
+.hljs-doctag,
+.hljs-keyword.hljs-atrule,
+.hljs-quote,.hljs-regexp {
+    color: #427b58;
+}
+.hljs-attribute,
+.hljs-function .hljs-title,
+.hljs-section,
+.hljs-title.function_,
+.ruby .hljs-property {
+    color: #076678;
+}
+.diff .hljs-meta,
+.hljs-keyword,
+.hljs-template-tag,
+.hljs-type {
+    color: #8f3f71;
+}
+.hljs-emphasis {
+    color: #8f3f71;
+    font-style: italic;
+}
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-meta .hljs-string {
+    color: #d65d0e
+}
+.hljs-meta .hljs-keyword,
+.hljs-meta-keyword {
+    font-weight: 700
+}
+
+/* Dark Theme */
+.dark .hljs {
+    color: #d5c4a1;
+    background: #292524;
+}
+.dark .hljs ::selection,
+.dark .hljs::selection {
+    background-color: #504945;
+    color: #d5c4a1;
+}
+.dark .hljs-comment {
+    color: #665c54;
+}
+.dark .hljs-tag {
+    color: #bdae93;
+}
+.dark .hljs-operator,
+.dark .hljs-punctuation,
+.dark .hljs-subst {
+    color: #d5c4a1;
+}
+.dark .hljs-bullet,
+.dark .hljs-deletion,
+.dark .hljs-name,
+.dark .hljs-selector-tag,
+.dark .hljs-template-variable,
+.dark .hljs-variable {
+    color: #fb4934;
+}
+.dark .hljs-attr,
+.dark .hljs-link,
+.dark .hljs-literal,
+.dark .hljs-number,
+.dark .hljs-symbol,
+.dark .hljs-variable.constant_ {
+    color: #fe8019;
+}
+.dark .hljs-class .hljs-title,
+.dark .hljs-title,
+.dark .hljs-title.class_ {
+    color: #fabd2f;
+}
+.dark .hljs-strong {
+    color: #fabd2f;
+}
+.dark .hljs-addition,
+.dark .hljs-code,
+.dark .hljs-string,
+.dark .hljs-title.class_.inherited__ {
+    color: #b8bb26;
+}
+.dark .hljs-built_in,
+.dark .hljs-doctag,
+.dark .hljs-keyword.hljs-atrule,
+.dark .hljs-quote,.hljs-regexp {
+    color: #8ec07c;
+}
+.dark .hljs-attribute,
+.dark .hljs-function .hljs-title,
+.dark .hljs-section,
+.dark .hljs-title.function_,
+.dark .ruby .hljs-property {
+    color: #83a598;
+}
+.dark .diff .hljs-meta,
+.dark .hljs-keyword,
+.dark .hljs-template-tag,
+.dark .hljs-type {
+    color: #d3869b;
+}
+.dark .hljs-emphasis {
+    color: #d3869b;
+}
+.dark .hljs-meta,
+.dark .hljs-meta .hljs-keyword,
+.dark .hljs-meta .hljs-string {
+    color: #d65d0e;
+}
