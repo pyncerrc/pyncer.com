@@ -15,7 +15,9 @@ use function Pyncer\Http\url_equals as pyncer_http_url_equals;
 use function Pyncer\Http\relative_url as pyncer_http_relative_url;
 
 use const Pyncer\Docs\GITHUB_URL as DOCS_GITHUB_URL;
-use const Pyncer\Docs\VERSION as DOCS_VERSION;
+use const Pyncer\Docs\PROJECT_VERSION as DOCS_PROJECT_VERSION;
+use const Pyncer\Docs\CSS_VERSION as DOCS_CSS_VERSION;
+use const Pyncer\Docs\JS_VERSION as DOCS_JS_VERSION;
 
 class PyncerTheme extends AbstractComponent implements
     ThemeComponentInterface
@@ -84,7 +86,7 @@ class PyncerTheme extends AbstractComponent implements
     <meta name="msapplication-TileColor" content="#fafaf9">
     <meta name="msapplication-config" content="/favicon/browserconfig.xml">
     <meta name="theme-color" content="#fafaf9">
-    <link href="/main.css" rel="stylesheet">
+    <link href="/main.css?v=<?=DOCS_CSS_VERSION?>" rel="stylesheet">
     <script>
         try {
             if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -95,7 +97,7 @@ class PyncerTheme extends AbstractComponent implements
             }
         } catch (_) {}
     </script>
-    <script src="/main.js"></script>
+    <script src="/main.js?v=<?=DOCS_JS_VERSION?>"></script>
     <?= $this->makeHead($page) ?>
 </head>
 <body class="bg-stone-50 dark:bg-stone-900 text-stone-900 dark:text-stone-50">
@@ -137,7 +139,7 @@ class PyncerTheme extends AbstractComponent implements
 <?php
             $icon = ob_get_clean();
 
-            $version = DOCS_VERSION;
+            $version = DOCS_PROJECT_VERSION;
         }
 
         $localeCodes = $i18n->getLocaleCodes();
