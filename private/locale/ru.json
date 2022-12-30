@@ -47,5 +47,7 @@
     "light.label": "Свет",
     "language.label": "Язык",
     "system.label": "Система",
-    "theme.label": "Тема"
+    "theme.label": "Тема",
+
+    "edit_page.label": "Изменить эту страницу на GitHub"
 }

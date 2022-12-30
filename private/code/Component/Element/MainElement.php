@@ -9,6 +9,7 @@ use Pyncer\Http\Message\HtmlResponse;
 use Pyncer\Http\Message\Status;
 
 use const DIRECTORY_SEPARATOR as DS;
+use function Pyncer\http\clean_path as pyncer_http_clean_path;
 use function Pyncer\IO\clean_dir as pyncer_io_clean_dir;
 use function Pyncer\IO\filenames as pyncer_io_filenames;
 
@@ -34,28 +35,47 @@ class MainElement extends AbstractElement
 
         $files = [];
 
-        $paths = $this->paths;
-        $path = array_pop($paths);
+        if ($this->paths) {
+            $paths = $this->paths;
+            $path = array_pop($paths);
 
-        foreach ($i18n->getRankedLocaleCodes() as $localeCode) {
-            $files[] = $this->dir . DS . implode(DS, $paths) . DS .
-                $path . DS . 'index.' . $localeCode . '.md';
+            foreach ($i18n->getRankedLocaleCodes() as $localeCode) {
+                if ($paths) {
+                    $files[] = $this->dir . DS . implode(DS, $paths) . DS .
+                        $path . DS . 'index.' . $localeCode . '.md';
 
-            $files[] = $this->dir . DS . implode(DS, $paths) . DS .
-                 $path . '.' . $localeCode . '.md';
+                    $files[] = $this->dir . DS . implode(DS, $paths) . DS .
+                         $path . '.' . $localeCode . '.md';
+                } else {
+                    $files[] = $this->dir . DS .
+                        $path . DS . 'index.' . $localeCode . '.md';
+
+                    $files[] = $this->dir . DS .
+                         $path . '.' . $localeCode . '.md';
+                }
+            }
+
+            $files[] = $this->dir . DS . implode(DS, $this->paths) . DS .'index.md';
+            $files[] = $this->dir . DS . implode(DS, $this->paths) . '.md';
+        } else {
+            foreach ($i18n->getRankedLocaleCodes() as $localeCode) {
+                $files[] = $this->dir .  DS .'index.' . $localeCode . '.md';
+            }
+
+            $files[] = $this->dir .  DS .'index.md';
         }
-
-        $files[] = $this->dir . DS . implode(DS, $this->paths) . DS .'index.md';
-        $files[] = $this->dir . DS . implode(DS, $this->paths) . '.md';
 
         $markdown = null;
 
         foreach ($files as $file) {
             if (file_exists($file)) {
                 $markdown = file_get_contents($file);
+                $githubFile = substr($file, strlen($this->dir));
                 break;
             }
         }
+
+        $githubFile = pyncer_http_clean_path($githubFile);
 
         $converter = new GithubFlavoredMarkdownConverter([
             'html_input' => 'strip',
@@ -64,11 +84,9 @@ class MainElement extends AbstractElement
 
         $html = $converter->convert($markdown);
 
-        https://github.com/pyncerrc/pyncer-docs/issues/new?template=page-report.yml&mdn-url=&metadata=
-
-        return new HtmlResponse(
-            Status::SUCCESS_200_OK,
-            $html
-        );
+        return [
+            'github_file' => $githubFile,
+            'content' => $html,
+        ];
     }
 }

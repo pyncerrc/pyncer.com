@@ -47,5 +47,7 @@
     "light.label": "光",
     "language.label": "言語",
     "system.label": "システム",
-    "theme.label": "テーマ"
+    "theme.label": "テーマ",
+
+    "edit_page.label": "GitHub でこのページを編集"
 }

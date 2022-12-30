@@ -48,5 +48,7 @@
     "light.label": "Lumière",
     "language.label": "Langue",
     "system.label": "Système",
-    "theme.label": "Thème"
+    "theme.label": "Thème",
+
+    "edit_page.label": "Modifier cette page sur GitHub"
 }

@@ -15,6 +15,7 @@ use function Pyncer\Http\url_equals as pyncer_http_url_equals;
 use function Pyncer\Http\relative_url as pyncer_http_relative_url;
 
 use const Pyncer\Docs\GITHUB_URL as DOCS_GITHUB_URL;
+use const Pyncer\Docs\GITHUB_EDIT_PAGE_URL as DOCS_GITHUB_EDIT_PAGE_URL;
 use const Pyncer\Docs\PROJECT_VERSION as DOCS_PROJECT_VERSION;
 use const Pyncer\Docs\CSS_VERSION as DOCS_CSS_VERSION;
 use const Pyncer\Docs\JS_VERSION as DOCS_JS_VERSION;
@@ -91,9 +92,10 @@ class PyncerTheme extends AbstractComponent implements
         try {
             if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark')
-                document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000000')
+                document.querySelector('meta[name="theme-color"]').setAttribute('content', '#1c1917')
             } else {
                 document.documentElement.classList.remove('dark')
+                document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fafaf9')
             }
         } catch (_) {}
     </script>
@@ -405,7 +407,7 @@ class PyncerTheme extends AbstractComponent implements
             $url = pyncer_http_relative_url($item['url']);
 ?>
                 <li class="after:content-['/'] after:px-1 flex">
-                    <a class="text-red-600 hover:underline underline-offset-8" href="<?= pyncer_he($url) ?>">
+                    <a class="text-red-600 hover:underline underline-offset-4 lg:underline-offset-8" href="<?= pyncer_he($url) ?>">
                         <?= pyncer_he($item['title']) ?>
                     </a>
                 </li>
@@ -441,7 +443,7 @@ class PyncerTheme extends AbstractComponent implements
                 '<code class="hljs">',
                 '<pre class="text-xs lg:text-sm mb-4">',
             ],
-            $page['main'] ?? ''
+            $page['main']['content'] ?? ''
         );
 
         // Localize all relative urls
@@ -464,12 +466,13 @@ class PyncerTheme extends AbstractComponent implements
 
         ob_start();
 ?>
-    <main class="grow p-2 lg:pl-8 lg:pr-4 lg:py-4 overflow-y-auto lg:border-stone-300 dark:lg:border-stone-700" id="main">
+    <main class="grow flex flex-col p-2 lg:pl-8 lg:pr-4 lg:py-4 overflow-y-auto lg:border-stone-300 dark:lg:border-stone-700" id="main">
         <?= $this->makeI18nNotice() ?>
         <?= $this->makeBreadcrumb($page) ?>
-        <div>
+        <div class="grow">
         <?= $main ?>
         </div>
+        <?= $this->makeEditPageLink($page) ?>
     </main>
 <?php
         return ob_get_clean();
@@ -498,6 +501,29 @@ class PyncerTheme extends AbstractComponent implements
                 <path d="M 64 23.599609 C 60.3 23.599609 57.099219 25.499609 55.199219 28.599609 L 19.099609 88.900391 C 17.199609 92.100391 17.1 95.999219 19 99.199219 C 20.8 102.39922 24.100781 104.40039 27.800781 104.40039 L 100.09961 104.40039 C 103.79961 104.40039 107.2 102.49922 109 99.199219 C 110.8 95.999219 110.80039 92.100391 108.90039 88.900391 L 72.800781 28.599609 C 70.900781 25.499609 67.7 23.599609 64 23.599609 z M 64 29.599609 C 65.5 29.599609 66.799609 30.299219 67.599609 31.699219 L 103.80078 92 C 104.60078 93.3 104.60039 94.900781 103.90039 96.300781 C 103.10039 97.600781 101.79922 98.400391 100.19922 98.400391 L 27.800781 98.400391 C 26.300781 98.400391 24.899609 97.600781 24.099609 96.300781 C 23.299609 95.000781 23.399219 93.3 24.199219 92 L 60.400391 31.699219 C 61.200391 30.399219 62.5 29.599609 64 29.599609 z M 64 49.300781 C 62.3 49.300781 61 50.600781 61 52.300781 L 61 73.300781 C 61 75.000781 62.3 76.300781 64 76.300781 C 65.7 76.300781 67 75.000781 67 73.300781 L 67 52.300781 C 67 50.600781 65.7 49.300781 64 49.300781 z M 64 80.5 A 3 3 0 0 0 61 83.5 A 3 3 0 0 0 64 86.5 A 3 3 0 0 0 67 83.5 A 3 3 0 0 0 64 80.5 z"/>
             </svg>
             <?= $i18n->get('notice.i18n') ?>
+        </div>
+<?php
+        return ob_get_clean();
+    }
+
+    private function makeEditPageLink(array $page): string
+    {
+        if (($page['main']['github_file'] ?? '') === '') {
+            return '';
+        }
+
+        $i18n = $this->get(ID::I18N);
+
+        $url = DOCS_GITHUB_EDIT_PAGE_URL . $page['main']['github_file'];
+
+        ob_start();
+?>
+        <div class="mt-8 p-2 border-t lg:border-t-2 border-stone-300 dark:border-stone-700 text-right text-xs">
+            <a class="text-stone-500 hover:underline underline-offset-4 lg:underline-offset-8"
+                href="<?= pyncer_he($url) ?>"
+            >
+                <?= $i18n->get('edit_page.label') ?>
+            </a>
         </div>
 <?php
         return ob_get_clean();

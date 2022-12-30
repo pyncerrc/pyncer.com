@@ -85,5 +85,7 @@
     "light.label": "Light",
     "language.label": "Language",
     "system.label": "System",
-    "theme.label": "Theme"
+    "theme.label": "Theme",
+
+    "edit_page.label": "Edit this page on GitHub"
 }
