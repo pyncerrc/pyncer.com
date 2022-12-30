@@ -2,11 +2,11 @@ html {
     font-size: 150%;
     height: 100%;
 }
-@media screen(sm) {
+/* @media screen(sm) {
     html {
         font-size: 200%;
     }
-}
+} */
 body {
     height: 100%;
 }
