@@ -1,8 +1,9 @@
 <?php
 use Pyncer\App\Middleware\DebugMiddleware;
 use Pyncer\App\Middleware\I18nMiddleware;
-use Pyncer\App\Middleware\Redirect\WwwMiddleware;
 use Pyncer\App\Middleware\Redirect\HttpsMiddleware;
+use Pyncer\App\Middleware\Redirect\SlashMiddleware;
+use Pyncer\App\Middleware\Redirect\WwwMiddleware;
 use Pyncer\App\Middleware\Response\RouterResponseMiddleware;
 use Pyncer\App\Middleware\Routing\PageRouterMiddleware;
 use Pyncer\Http\Message\Status;
@@ -33,6 +34,11 @@ $app->append(
 
     new WwwMiddleware(
         includeWww: false,
+        redirectStatus: Status::REDIRECTION_301_MOVED_PERMANENTLY
+    ),
+
+    new SlashMiddleware(
+        includeSlash: false,
         redirectStatus: Status::REDIRECTION_301_MOVED_PERMANENTLY
     ),
 
