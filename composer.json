@@ -1,6 +1,6 @@
 {
     "require": {
-        "pyncer/app": "^1.0",
+        "pyncer/app": "^1.1",
         "pyncer/dotenv": "^1.0.1",
         "league/commonmark": "^2.3",
         "vlucas/phpdotenv": "^5.5"

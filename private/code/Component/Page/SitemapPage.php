@@ -83,18 +83,20 @@ class SitemapPage extends AbstractPage
         <?php if ($date !== false) { ?>
         <lastmod><?= $date ?></lastmod>
         <?php } ?>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority><?= $priority ?></priority>
     </url>
 <?php
 
             $xml[] = ob_get_clean();
 
-            $xml[] = $this->makeMarkdownPageUrls(
-                $dir . DS . $page,
-                $url . '/' . $page,
-                $priority - 0.1,
-            );
+            if (is_dir($dir . DS . $page)) {
+                $xml[] = $this->makeMarkdownPageUrls(
+                    $dir . DS . $page,
+                    $url . '/' . $page,
+                    $priority - 0.1,
+                );
+            }
         }
 
         return implode("\n", $xml);
